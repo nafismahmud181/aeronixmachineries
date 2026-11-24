@@ -3,22 +3,22 @@
     {
       "id": "meat",
       "name": "Meat processing",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Sausage_making-H-5-edited2.jpg/960px-Sausage_making-H-5-edited2.jpg"
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg/960px-Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg"
     },
     {
       "id": "bakery",
       "name": "Bakery & dough",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/SSF_Costco_bakery_pastry_packaging_line.JPG/960px-SSF_Costco_bakery_pastry_packaging_line.JPG"
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Industrial_hearth_deck_oven_and_rotary_rack_oven.JPG/960px-Industrial_hearth_deck_oven_and_rotary_rack_oven.JPG"
     },
     {
       "id": "fruitveg",
       "name": "Fruit & vegetable",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Potatoes_Move_Down_a_Conveyor_Belt_Before_Being_Made_into_Potato_Flakes_-_NARA_-_5956656.jpg/960px-Potatoes_Move_Down_a_Conveyor_Belt_Before_Being_Made_into_Potato_Flakes_-_NARA_-_5956656.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Kartoffelsch%C3%A4lmaschine.jpg"
     },
     {
       "id": "snack",
       "name": "Snack & puffed food",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Potato_chips_in_fryer.jpg/960px-Potato_chips_in_fryer.jpg"
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Fish_food_extruder.jpg/960px-Fish_food_extruder.jpg"
     },
     {
       "id": "noodle",
@@ -28,7 +28,7 @@
     {
       "id": "nut",
       "name": "Nut & seed",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Cashew_roasting_trad_2.jpg/960px-Cashew_roasting_trad_2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/DIEDRICH_infrared_drum_coffee_roaster.jpg"
     },
     {
       "id": "frozen",
@@ -216,7 +216,7 @@
       "weight": "420 kg",
       "dimensions": "2400 × 900 × 1300 mm",
       "scale": "factory",
-      "featured": false,
+      "featured": true,
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Kartoffelsch%C3%A4lmaschine.jpg",
       "description": "Brush-washes and peels potatoes, carrots, ginger and other root vegetables continuously.",
       "features": [
@@ -237,7 +237,7 @@
       "weight": "75 kg",
       "dimensions": "800 × 500 × 1000 mm",
       "scale": "small",
-      "featured": true,
+      "featured": false,
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cucumber_slices.jpg",
       "description": "Slices, dices and shreds vegetables and fruit with quick-change blades.",
       "features": [
@@ -490,7 +490,7 @@
       "dimensions": "1300 × 700 × 1400 mm",
       "scale": "both",
       "featured": true,
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Dumplings_%28Unsplash%29.jpg/960px-Dumplings_%28Unsplash%29.jpg",
+      "image": "assets/hero/hero-poster.jpg",
       "description": "Makes dumplings, gyoza, samosas and empanadas automatically with your own fillings.",
       "features": [
         "Moulds for many dumpling shapes",

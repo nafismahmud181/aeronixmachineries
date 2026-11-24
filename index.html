@@ -37,7 +37,7 @@
   --white:#FFFFFF;
   --bg-soft:#F4F4F4;
   --text:#1A1A1A;
-  --text-muted:#5C5C5C;
+  --text-muted:#474747;
   --line:#E3E3E3;
   --line-dark:rgba(255,255,255,0.18);
   --wa:#25D366;
@@ -48,12 +48,12 @@
 
   --container:1320px;
   --gutter:32px;
-  --section-y:112px;
+  --section-y:80px;
   --header-h:124px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --t:200ms;
 }
-@media (max-width:959px){ :root{ --gutter:20px; --section-y:72px; --header-h:64px; } }
+@media (max-width:959px){ :root{ --gutter:20px; --section-y:56px; --header-h:64px; } }
 @media (max-width:420px){ :root{ --gutter:16px; } }
 
 /* =========================================================
@@ -82,7 +82,7 @@ button{cursor:pointer}
 .h3{font-weight:600;font-size:clamp(17px,1.5vw,20px);line-height:1.25;color:var(--primary)}
 .on-dark .h2,.on-dark .h3{color:var(--white)}
 .lead{font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--text-muted);margin:0;max-width:620px;text-wrap:pretty}
-.on-dark .lead{color:rgba(255,255,255,0.82)}
+.on-dark .lead{color:rgba(255,255,255,0.92)}
 .eyebrow{display:inline-block;font-size:14px;font-weight:600;letter-spacing:0.02em;color:var(--primary);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:7px;margin:0}
 .on-dark .eyebrow{color:var(--white)}
 .mono{font-family:var(--font-mono);font-size:14px;letter-spacing:0}
@@ -195,6 +195,7 @@ button{cursor:pointer}
 .hero-overlay{position:absolute;inset:0;background:rgba(6,18,58,0.55)}
 .hero-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding-bottom:96px}
 .hero-content .h1{max-width:1040px}
+.hero .eyebrow{color:var(--white);text-decoration-color:rgba(255,255,255,0.7)}
 .hero-content .lead{color:rgba(255,255,255,0.88);max-width:560px}
 .hero-slide .hero-content>*{transform:translateY(16px);opacity:0;transition:transform 700ms var(--ease) 200ms,opacity 700ms ease 200ms}
 .hero-slide.is-active .hero-content>*{transform:none;opacity:1}
@@ -237,11 +238,11 @@ button{cursor:pointer}
 .section{padding:var(--section-y) 0}
 .section--soft{background:var(--bg-soft)}
 .section--navy{background:var(--primary);color:var(--white)}
-.section-stack{display:flex;flex-direction:column;gap:56px}
-@media (max-width:959px){ .section-stack{gap:40px} }
+.section-stack{display:flex;flex-direction:column;gap:40px}
+@media (max-width:959px){ .section-stack{gap:28px} }
 
 .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.tile{position:relative;aspect-ratio:1/1;overflow:hidden;display:block;width:100%;padding:0;border:0;border-radius:0;text-align:left;color:var(--white);background:var(--primary);transition:background-color var(--t)}
+.tile{position:relative;aspect-ratio:4/3;overflow:hidden;display:block;width:100%;padding:0;border:0;border-radius:0;text-align:left;color:var(--white);background:var(--primary);transition:background-color var(--t)}
 .tile-media{position:absolute;inset:0}
 .tile-media img{transition:transform 600ms var(--ease)}
 .tile-overlay{position:absolute;inset:0;background:rgba(6,18,58,0.5);transition:background-color var(--t)}
@@ -249,7 +250,9 @@ button{cursor:pointer}
 .tile-icon{font-size:clamp(30px,3vw,40px)}
 .tile-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .tile-label{font-family:var(--font-display);text-transform:uppercase;font-weight:600;font-size:clamp(14px,1.3vw,18px);line-height:1.25}
-.tile-sub{display:block;font-family:var(--font-body);text-transform:none;font-weight:400;font-size:14px;line-height:1.5;margin-top:8px;opacity:0.8}
+.tile-sub{display:block;font-family:var(--font-body);text-transform:none;font-weight:400;font-size:14px;line-height:1.45;letter-spacing:0;margin-top:6px;color:rgba(255,255,255,0.9)}
+.tile--soft .tile-sub{color:var(--text-muted)}
+.tile-overlay{background:rgba(6,18,58,0.55)}
 .tile-arrow{font-size:24px;transition:transform var(--t) var(--ease)}
 .tile:hover .tile-arrow{transform:translateX(6px)}
 .tile--navy:hover{background:var(--primary-hover)}
@@ -258,8 +261,18 @@ button{cursor:pointer}
 .tile--soft{background:var(--bg-soft);color:var(--primary);border:1px solid var(--line)}
 .tile--soft:hover{background:#ECECEC}
 .tile--soft .tile-arrow{color:var(--accent)}
-@media (max-width:959px){ .tiles{grid-template-columns:repeat(2,minmax(0,1fr))} }
-@media (max-width:559px){ .tiles{grid-template-columns:1fr} .tile{aspect-ratio:16/10} }
+@media (max-width:1099px){ .tiles{grid-template-columns:repeat(3,minmax(0,1fr))} .tile--soft{grid-column:span 2;aspect-ratio:auto} }
+@media (max-width:599px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .tile{aspect-ratio:auto;min-height:112px}
+  .tile--soft{grid-column:auto;min-height:112px}
+  .tile-body{padding:14px}
+  .tile-icon{font-size:24px}
+  .tile-label{font-size:12px;letter-spacing:0}
+  .tile-sub{display:none}
+  .tile-arrow{font-size:18px}
+  .tile-foot{gap:8px}
+}
 
 /* Image slots (filled by script) */
 .slot{width:100%;height:100%}
@@ -269,33 +282,39 @@ button{cursor:pointer}
 /* =========================================================
    8. Split feature blocks
    ========================================================= */
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
 .split-text{background:var(--primary);color:var(--white);display:flex;align-items:center}
-.split-text-in{width:100%;max-width:calc(var(--container) / 2);padding:96px clamp(24px,5vw,88px);display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.split-text-in{width:100%;max-width:calc(var(--container) / 2);padding:64px clamp(24px,5vw,80px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .split--text-left .split-text-in{margin-left:auto}
 .split-media{position:relative;overflow:hidden;background:var(--primary-deep)}
 .split-media .slot{position:absolute;inset:0}
 .split--text-right .split-media{order:-1}
 .split-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;width:100%;border-top:1px solid var(--line-dark)}
-.split-list li{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line-dark)}
+.split-list li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line-dark)}
 .split-list .ico{font-size:24px;margin-top:2px}
 .split-list strong{display:block;font-weight:600;font-size:16px}
-.split-list span{font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)}
+.split-list span{font-size:15px;line-height:1.6;color:rgba(255,255,255,0.88)}
 .split-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:8px}
 @media (max-width:899px){
   .split{grid-template-columns:1fr;min-height:0}
-  .split-media{order:-1;aspect-ratio:16/10}
-  .split-text-in{max-width:none;padding:56px var(--gutter)}
+  .split-media{order:-1;aspect-ratio:16/9;max-height:340px;width:100%}
+  .split-text-in{max-width:none;padding:44px var(--gutter)}
 }
 
 /* Reasons strip */
 .reasons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
-.reason{display:flex;flex-direction:column;gap:14px;padding:44px 32px 48px;border-right:1px solid var(--line)}
+.reason{display:flex;flex-direction:column;gap:12px;padding:36px 28px 40px;border-right:1px solid var(--line)}
 .reason:last-child{border-right:0}
 .reason .ico{font-size:36px;color:var(--primary)}
 .reason p{margin:0;font-size:15px;line-height:1.65;color:var(--text-muted)}
 @media (max-width:959px){ .reasons{grid-template-columns:1fr 1fr} .reason:nth-child(2){border-right:0} .reason:nth-child(-n+2){border-bottom:1px solid var(--line)} }
-@media (max-width:559px){ .reasons{grid-template-columns:1fr} .reason{border-right:0;border-bottom:1px solid var(--line);padding:32px 0} .reason:last-child{border-bottom:0} }
+@media (max-width:599px){
+  .reason{padding:20px 14px 22px;gap:8px}
+  .reason:nth-child(odd){padding-left:0}
+  .reason .ico{font-size:24px}
+  .reason .h3{font-size:13px;letter-spacing:0}
+  .reason p{font-size:13px;line-height:1.5}
+}
 
 /* =========================================================
    9. Product cards
@@ -313,7 +332,14 @@ button{cursor:pointer}
 .card .link-arrow{margin-top:auto;padding-top:8px;font-size:15px}
 .card:hover .link-arrow .ico{transform:translateX(5px)}
 @media (max-width:1023px){ .cards{grid-template-columns:repeat(2,minmax(0,1fr))} }
-@media (max-width:599px){ .cards{grid-template-columns:1fr} }
+@media (max-width:599px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card-body{padding:12px 12px 14px;gap:4px}
+  .card-cat{font-size:10px;letter-spacing:0.04em}
+  .card-name{font-size:14px;line-height:1.3}
+  .card-spec{font-size:11px;line-height:1.4}
+  .card .link-arrow{font-size:13px;padding-top:6px}
+}
 
 /* =========================================================
    10. How it works
@@ -340,16 +366,17 @@ button{cursor:pointer}
    ========================================================= */
 .stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .story{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column}
-.story-media{aspect-ratio:16/10;overflow:hidden}
-.story-body{display:flex;flex-direction:column;gap:12px;padding:28px}
+.story-icon{font-size:32px;color:var(--accent)}
+.story-body{display:flex;flex-direction:column;gap:12px;padding:28px 28px 32px}
 .story-body p{margin:0;font-size:15px;line-height:1.65;color:var(--text-muted)}
 @media (max-width:959px){ .stories{grid-template-columns:1fr} }
 
 .about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .about-text{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 .about-text p{margin:0;font-size:17px;line-height:1.75;color:var(--text-muted)}
-.insta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.insta>div{aspect-ratio:1/1;overflow:hidden;border:1px solid var(--line)}
+.insta-panel{background:var(--primary);color:var(--white);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.insta-icon{font-size:40px}
+.insta-panel .btn{margin-top:8px}
 @media (max-width:959px){ .about{grid-template-columns:1fr;gap:40px} }
 
 .faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:72px;align-items:start}
@@ -393,21 +420,28 @@ textarea.input{resize:vertical;min-height:120px}
 /* =========================================================
    13. Footer & floating WhatsApp
    ========================================================= */
-.footer{background:var(--primary-deep);color:rgba(255,255,255,0.72);font-size:15px}
+.footer{background:var(--primary-deep);color:rgba(255,255,255,0.82);font-size:15px}
 .footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding:80px 0 64px}
 .footer-brand{display:flex;flex-direction:column;gap:20px}
 .footer-brand .brand-word{height:15px}
 .footer-brand p{margin:0;line-height:1.7;max-width:280px}
 .footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .footer-col h3{font-family:var(--font-display);text-transform:uppercase;font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--white);margin:0 0 8px;padding-bottom:14px;border-bottom:1px solid var(--line-dark);align-self:stretch}
-.footer-link{background:none;border:0;padding:0;text-align:left;color:rgba(255,255,255,0.72);text-decoration:none;font-size:15px;transition:color var(--t)}
+.footer-link{background:none;border:0;padding:0;text-align:left;color:rgba(255,255,255,0.82);text-decoration:none;font-size:15px;transition:color var(--t)}
 .footer-link:hover{color:var(--white);text-decoration:underline;text-underline-offset:4px}
 .footer-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:24px 0 32px;border-top:1px solid var(--line-dark);font-size:13px}
 .footer-legal nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 .footer-legal a{color:rgba(255,255,255,0.72);text-decoration:none}
 .footer-legal a:hover{color:var(--white);text-decoration:underline}
 @media (max-width:959px){ .footer-main{grid-template-columns:1fr 1fr;gap:40px;padding:56px 0 48px} .footer-brand{grid-column:1 / -1} }
-@media (max-width:519px){ .footer-main{grid-template-columns:1fr} }
+@media (max-width:599px){
+  .footer-main{grid-template-columns:1fr;gap:28px;padding:40px 0 32px}
+  .footer-col--machines{display:none}
+  .footer-col--company{flex-direction:row;flex-wrap:wrap;gap:10px 20px}
+  .footer-col h3{margin:0;padding-bottom:10px;flex-basis:100%}
+  .footer-col{gap:10px}
+  .footer-legal{padding:20px 0 88px}
+}
 
 .wa-float{position:fixed;right:24px;bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--wa);color:var(--white);border:2px solid var(--white);border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:background-color var(--t)}
 .wa-float .ico{font-size:20px}
@@ -440,8 +474,6 @@ textarea.input{resize:vertical;min-height:120px}
 .pdp{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding:32px 0 var(--section-y)}
 .pdp-gallery{display:flex;flex-direction:column;gap:10px}
 .pdp-main{aspect-ratio:1/1;overflow:hidden;background:#EDEDED}
-.pdp-thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.pdp-thumbs>div{aspect-ratio:1/1;overflow:hidden}
 .pdp-info{display:flex;flex-direction:column;align-items:flex-start;gap:24px;position:sticky;top:calc(var(--header-h) + 24px)}
 .pdp-info .h1{color:var(--primary);font-size:clamp(26px,3vw,42px)}
 .pdp-info .lead{max-width:none}
@@ -679,7 +711,7 @@ textarea.input{resize:vertical;min-height:120px}
             <span class="tile-body">
               <span class="ico tile-icon" data-icon="{{ c.icon }}"></span>
               <span class="tile-foot">
-                <span class="tile-label">{{ c.label }}</span>
+                <span class="tile-label">{{ c.label }}<span class="tile-sub">{{ c.sub }}</span></span>
                 <span class="ico tile-arrow" data-icon="arrow-right"></span>
               </span>
             </span>
@@ -736,7 +768,7 @@ textarea.input{resize:vertical;min-height:120px}
       </div>
     </div>
     <div class="split-media">
-      <div class="slot" data-slot="v2-split-factory" data-img="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/SSF_Costco_bakery_pastry_packaging_line.JPG/960px-SSF_Costco_bakery_pastry_packaging_line.JPG" data-ph="Bakery production line"></div>
+      <div class="slot" data-slot="v2-split-factory" data-img="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg/960px-Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg" data-ph="Stainless steel bowl cutter in a production kitchen"></div>
     </div>
   </section>
   <section class="container">
@@ -804,8 +836,8 @@ textarea.input{resize:vertical;min-height:120px}
       <div class="stories reveal">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
           <article class="story">
-            <div class="story-media"><div class="slot" data-slot="{{ c.slotId }}" data-ph="Customer photo"></div></div>
             <div class="story-body">
+              <span class="ico story-icon" data-icon="quote"></span>
               <span class="card-cat">{{ c.tag }}</span>
               <h3 class="h3">{{ c.title }}</h3>
               <p>{{ c.body }}</p>
@@ -830,7 +862,7 @@ textarea.input{resize:vertical;min-height:120px}
       </div>
     </div>
     <div class="split-media">
-      <div class="slot" data-slot="v2-split-tour" data-img="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Baker_using_dough_sheeter.jpg/960px-Baker_using_dough_sheeter.jpg" data-ph="Baker running a dough sheeter"></div>
+      <div class="slot" data-slot="v2-split-tour" data-img="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Fish_food_extruder.jpg/960px-Fish_food_extruder.jpg" data-ph="Extruder line running in the factory"></div>
     </div>
   </section>
 
@@ -842,12 +874,12 @@ textarea.input{resize:vertical;min-height:120px}
         <h2 class="h2">Hello from Guangzhou.</h2>
         <p>Aeronix Machinery is based in Guangzhou, at the heart of China's food machinery industry. We work side by side with the factories that build these machines, so we know which ones are built well.</p>
         <p>Whether you're opening your first bakery or adding a line to a busy plant, we treat your order like our own.</p>
-        <a class="link-arrow" href="https://www.instagram.com/aeronixmachineries/" target="_blank" rel="noopener"><span class="ico" data-icon="instagram"></span>Follow @aeronixmachineries<span class="ico" data-icon="arrow-right"></span></a>
       </div>
-      <div class="insta reveal">
-        <sc-for list="{{ insta }}" as="s" hint-placeholder-count="6">
-          <div><div class="slot" data-slot="{{ s }}" data-ph="Instagram post"></div></div>
-        </sc-for>
+      <div class="insta-panel on-dark reveal">
+        <span class="ico insta-icon" data-icon="instagram"></span>
+        <h3 class="h3">Follow us on Instagram</h3>
+        <p class="lead">See our latest machines and factory updates.</p>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/aeronixmachineries/" target="_blank" rel="noopener">@aeronixmachineries<span class="ico ico-nudge" data-icon="arrow-right"></span></a>
       </div>
     </div>
   </section>
@@ -940,11 +972,6 @@ textarea.input{resize:vertical;min-height:120px}
     <section class="pdp">
       <div class="pdp-gallery">
         <div class="pdp-main"><div class="slot" data-slot="{{ p.slotId }}" data-img="{{ p.image }}" data-ph="{{ p.name }}"></div></div>
-        <div class="pdp-thumbs">
-          <sc-for list="{{ p.gallery }}" as="g" hint-placeholder-count="3">
-            <div><div class="slot" data-slot="{{ g.id }}" data-ph="{{ g.label }}"></div></div>
-          </sc-for>
-        </div>
       </div>
       <div class="pdp-info">
         <span class="card-cat">{{ p.catLabel }}</span>
@@ -1060,14 +1087,14 @@ textarea.input{resize:vertical;min-height:120px}
         </div>
         <p>Factory-direct food processing machines from Guangzhou, China.</p>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-col--machines">
         <h3>Machines</h3>
         <sc-for list="{{ categories }}" as="c" hint-placeholder-count="7">
           <button class="footer-link" onClick="{{ c.open }}">{{ c.label }}</button>
         </sc-for>
         <button class="footer-link" onClick="{{ goCatalog }}">All machines</button>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-col--company">
         <h3>Company</h3>
         <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
           <button class="footer-link" onClick="{{ n.go }}">{{ n.label }}</button>
@@ -1198,7 +1225,7 @@ class Component extends DCLogic {
     document.documentElement.classList.add('has-reveal');
     this._io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-in', ''); this._io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
   }
   observeReveal() {
     if (!this._io) return;
@@ -1240,11 +1267,12 @@ class Component extends DCLogic {
     const card = m => ({ ...m, open: () => this.go('product', { pid: m.id }) });
     const openCat = key => () => this.go('catalog', { cat: key, q: '', scale: 'all' });
 
+    const catSubs = { meat: 'Grinders, bowl cutters, formers', bakery: 'Mixers, dividers, ovens', fruitveg: 'Washers, cutters, pulpers', snack: 'Extruders, fryers, seasoning', noodle: 'Noodle and pasta machines', nut: 'Roasters, slicers, grinders', frozen: 'Dumpling machines, freezers' };
     const catIcons = { meat: 'beef', bakery: 'croissant', fruitveg: 'apple', snack: 'popcorn', noodle: 'soup', nut: 'nut', frozen: 'snowflake' };
     const catImg = Object.fromEntries(((s.db && s.db.categories) || []).map(c => [c.id, c.image || '']));
     const categories = cats.map(([key, label], i) => {
       const navy = !catImg[key] || (i + Math.floor(i / 4)) % 2 === 1;
-      return { key, label, image: catImg[key], slotId: 'v2-cat-' + key, icon: catIcons[key] || 'factory', photo: !navy, tileCls: navy ? 'tile tile--navy' : 'tile tile--photo', open: openCat(key) };
+      return { key, label, image: catImg[key], slotId: 'v2-cat-' + key, icon: catIcons[key] || 'factory', sub: catSubs[key] || '', photo: !navy, tileCls: navy ? 'tile tile--navy' : 'tile tile--photo', open: openCat(key) };
     });
     const catFilters = [['all', 'All machines'], ...cats].map(([key, label]) => ({
       label, cls: s.cat === key ? 'ax-cat is-active' : 'ax-cat', select: () => this.setState({ cat: key })
@@ -1262,7 +1290,6 @@ class Component extends DCLogic {
     const pm = machines.find(m => m.id === s.pid) || machines[0] || { id: '', slotId: '', name: '', model: '', cat: '', catLabel: '', features: [], spec: '' };
     const p = {
       ...pm, openCat: openCat(pm.cat),
-      gallery: [['2', 'Detail'], ['3', 'Control panel'], ['4', 'Output sample']].map(([n, label]) => ({ id: pm.slotId + '-' + n, label })),
       waLink: wa + '?text=' + encodeURIComponent('Hello Aeronix, I am interested in the ' + pm.name + ' (' + pm.model + ').'),
       specs: [
         { k: 'Model', v: pm.model }, { k: 'Capacity', v: pm.capacity }, { k: 'Power', v: pm.power },
@@ -1351,7 +1378,6 @@ class Component extends DCLogic {
         { slotId: 'v2-case-kitchen', tag: 'Central kitchen · Middle East', title: 'Faster prep for a restaurant group', body: 'A grinder, bowl cutter and meatball former now handle prep for every branch.' },
         { slotId: 'v2-case-bakery', tag: 'Family bakery · Africa', title: 'Twice the bread, same small team', body: 'A mixer, divider and rack oven helped a family bakery take on wholesale orders.' }
       ],
-      insta: ['v2-ig-1', 'v2-ig-2', 'v2-ig-3', 'v2-ig-4', 'v2-ig-5', 'v2-ig-6'],
       faqs,
       catalogTitle: s.cat === 'all' ? 'All machines' : ((cats.find(c => c[0] === s.cat) || [])[1] || 'Machines'),
       catFilters, scaleFilters, results, noResults: results.length === 0,
