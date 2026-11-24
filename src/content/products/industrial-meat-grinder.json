@@ -1,0 +1,21 @@
+{
+  "name": "Industrial Meat Grinder",
+  "model": "AX-MG32",
+  "category": "meat-processing",
+  "capacity": "300–800 kg/h",
+  "power": "4 kW",
+  "voltage": "220V / 380V",
+  "weight": "120 kg",
+  "dimensions": "900 × 560 × 1050 mm",
+  "scale": "both",
+  "featured": true,
+  "image": "/images/products/industrial-meat-grinder/image.jpg",
+  "description": "Grinds fresh and frozen meat in one pass, with interchangeable plates from coarse to fine.",
+  "features": [
+    "Handles frozen blocks down to −18 °C",
+    "Quick-release head for fast cleaning",
+    "Reverse function clears jams safely"
+  ],
+  "bestFor": "Butchers, central kitchens and sausage producers",
+  "order": 1
+}

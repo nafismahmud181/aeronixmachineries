@@ -1,0 +1,21 @@
+{
+  "name": "Automatic Dumpling Machine",
+  "model": "AX-DF4800",
+  "category": "frozen-food",
+  "capacity": "4,800 pcs/h",
+  "power": "2.2 kW",
+  "voltage": "220V / 380V",
+  "weight": "200 kg",
+  "dimensions": "1300 × 700 × 1400 mm",
+  "scale": "both",
+  "featured": true,
+  "image": "/images/products/automatic-dumpling-machine/image.jpg",
+  "description": "Makes dumplings, gyoza, samosas and empanadas automatically with your own fillings.",
+  "features": [
+    "Moulds for many dumpling shapes",
+    "Adjustable wrapper thickness and filling",
+    "Replaces several hand workers"
+  ],
+  "bestFor": "Frozen food makers, restaurants and caterers",
+  "order": 22
+}

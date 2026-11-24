@@ -1,0 +1,21 @@
+{
+  "name": "Rotary Rack Oven",
+  "model": "AX-RO16",
+  "category": "bakery-dough",
+  "capacity": "16 trays/batch",
+  "power": "Gas / diesel / electric",
+  "voltage": "380V",
+  "weight": "1,600 kg",
+  "dimensions": "2100 × 1750 × 2400 mm",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/rotary-rack-oven/image.jpg",
+  "description": "Bakes evenly on all sides as the rack rotates, with built-in steam for crusty bread.",
+  "features": [
+    "Choice of gas, diesel or electric heating",
+    "Steam system for crusty loaves",
+    "Digital temperature and timer control"
+  ],
+  "bestFor": "Growing bakeries and central bakery kitchens",
+  "order": 7
+}

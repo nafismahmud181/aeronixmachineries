@@ -1,0 +1,21 @@
+{
+  "name": "Snack Extruder Line",
+  "model": "AX-SE70",
+  "category": "snack-puffed-food",
+  "capacity": "120–150 kg/h",
+  "power": "Full line",
+  "voltage": "380V",
+  "weight": "3,200 kg",
+  "dimensions": "Line length approx. 22 m",
+  "scale": "factory",
+  "featured": true,
+  "image": "/images/products/snack-extruder-line/image.jpg",
+  "description": "A complete line for puffed corn snacks, cereal rings and filled pillows, from mixing to flavouring.",
+  "features": [
+    "Change shapes with a mould swap",
+    "Mixer, extruder, dryer and flavouring included",
+    "Low waste, consistent puffing"
+  ],
+  "bestFor": "Snack brands and cereal producers",
+  "order": 13
+}

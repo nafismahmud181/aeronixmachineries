@@ -1,0 +1,21 @@
+{
+  "name": "Automatic Meatball Former",
+  "model": "AX-MB200",
+  "category": "meat-processing",
+  "capacity": "200–250 pcs/min",
+  "power": "1.5 kW",
+  "voltage": "220V / 380V",
+  "weight": "85 kg",
+  "dimensions": "700 × 450 × 1100 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/automatic-meatball-former/image.jpg",
+  "description": "Forms round, even meatballs in adjustable sizes, ready for boiling, frying or freezing.",
+  "features": [
+    "Size adjustable from 13 to 30 mm",
+    "Works with meat, fish and vegetable fillings",
+    "Compact footprint for small kitchens"
+  ],
+  "bestFor": "Restaurants, hot-pot suppliers and frozen food makers",
+  "order": 3
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Popcorn Machine",
+  "model": "AX-PC100",
+  "category": "snack-puffed-food",
+  "capacity": "50–100 kg/h",
+  "power": "Gas or electric",
+  "voltage": "220V / 380V",
+  "weight": "380 kg",
+  "dimensions": "1600 × 1200 × 1900 mm",
+  "scale": "both",
+  "featured": false,
+  "image": "/images/products/popcorn-machine/image.jpg",
+  "description": "Makes caramel, chocolate and butter popcorn in large batches with even coating.",
+  "features": [
+    "Stirring arm prevents burning",
+    "Sugar and flavour coating built in",
+    "Fast tilt discharge"
+  ],
+  "bestFor": "Popcorn brands, cinemas and snack makers",
+  "order": 16
+}

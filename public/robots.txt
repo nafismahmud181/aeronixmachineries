@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /keystatic/
+
+Sitemap: https://aeronixmachinery.com/sitemap-index.xml

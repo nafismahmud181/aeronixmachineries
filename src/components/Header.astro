@@ -1,0 +1,78 @@
+---
+import Icon from './Icon.astro';
+import { NAV, SITE, waLink } from '../data/site';
+import { getCategories, categoryUrl } from '../lib/catalog';
+
+const categories = await getCategories();
+---
+<header class="site-header">
+  <div class="hdr-top">
+    <div class="container hdr-top-in">
+      <a class="brand" href="/" aria-label={`${SITE.name} home`}>
+        <img class="brand-mark" src="/brand/aeronix-mark-navy.png" alt="" width="460" height="400">
+        <img class="brand-word" src="/brand/aeronix-wordmark-dark.png" alt={SITE.name} width="1300" height="125">
+      </a>
+      <div class="hdr-tools">
+        <form class="hdr-search" role="search" action="/machines/" method="get">
+          <Icon name="search" />
+          <input type="search" name="q" placeholder="Search machines" aria-label="Search machines">
+        </form>
+        <span class="pill-lang" aria-label="Language: English"><Icon name="globe" />English</span>
+        <a class="btn btn-primary btn-sm" href="#quote">Get a quote</a>
+        <button class="hdr-burger" type="button" data-mobile-open aria-label="Open menu" aria-controls="mnav" aria-expanded="false"><Icon name="menu" /></button>
+      </div>
+    </div>
+  </div>
+  <div class="hdr-nav">
+    <div class="container hdr-nav-in">
+      <button class="mega-btn" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega"><Icon name="menu" />Machines<Icon name="chevron-down" class="chev" /></button>
+      <nav class="hdr-links" aria-label="Main">
+        {NAV.map(n => <a class="hdr-link" href={n.href}>{n.label}</a>)}
+      </nav>
+    </div>
+  </div>
+  <div class="mega" id="mega" hidden>
+    <div class="container">
+      <div class="mega-in">
+        {categories.map(c => (
+          <a class="mega-item" href={categoryUrl(c.id)}><Icon name={c.data.icon} />{c.data.name}<Icon name="arrow-right" class="ico-arrow" /></a>
+        ))}
+        <a class="mega-item mega-item--navy" href="/machines/"><Icon name="layout-grid" />All machines<Icon name="arrow-right" class="ico-arrow" /></a>
+      </div>
+    </div>
+  </div>
+  <button class="mega-backdrop" type="button" data-mega-close aria-label="Close menu" hidden></button>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="container mnav-top">
+    <a class="brand" href="/" aria-label={`${SITE.name} home`}>
+      <img class="brand-mark" src="/brand/aeronix-mark-navy.png" alt="" width="460" height="400">
+      <img class="brand-word" src="/brand/aeronix-wordmark-dark.png" alt={SITE.name} width="1300" height="125">
+    </a>
+    <button class="hdr-burger" type="button" style="display:inline-flex" data-mobile-close aria-label="Close menu"><Icon name="x" /></button>
+  </div>
+  <div class="container mnav-body">
+    <form class="hdr-search" role="search" action="/machines/" method="get">
+      <Icon name="search" />
+      <input type="search" name="q" placeholder="Search machines" aria-label="Search machines">
+    </form>
+    <div>
+      <span class="mnav-label">Machines</span>
+      <div class="mnav-list" style="margin-top:12px">
+        {categories.map(c => (
+          <a class="mnav-item" href={categoryUrl(c.id)}><Icon name={c.data.icon} />{c.data.name}<Icon name="arrow-right" class="ico-arrow" /></a>
+        ))}
+        <a class="mnav-item" href="/machines/"><Icon name="layout-grid" />All machines<Icon name="arrow-right" class="ico-arrow" /></a>
+      </div>
+    </div>
+    <div>
+      <span class="mnav-label">Company</span>
+      <div class="mnav-list" style="margin-top:12px">
+        {NAV.map(n => <a class="mnav-item" href={n.href} data-mobile-close>{n.label}<Icon name="arrow-right" class="ico-arrow" /></a>)}
+      </div>
+    </div>
+    <a class="btn btn-primary btn-block" href="#quote" data-mobile-close>Get a quote</a>
+    <a class="btn btn-wa btn-block" href={waLink()} target="_blank" rel="noopener"><Icon name="message-circle" />Chat on WhatsApp</a>
+  </div>
+</div>

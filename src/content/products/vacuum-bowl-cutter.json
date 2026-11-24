@@ -1,0 +1,21 @@
+{
+  "name": "Vacuum Bowl Cutter",
+  "model": "AX-BC80",
+  "category": "meat-processing",
+  "capacity": "80 L bowl",
+  "power": "15 kW",
+  "voltage": "380V",
+  "weight": "650 kg",
+  "dimensions": "1900 × 1350 × 1300 mm",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/vacuum-bowl-cutter/image.jpg",
+  "description": "Chops, mixes and emulsifies meat for sausages, meatballs and fish paste with a smooth, even texture.",
+  "features": [
+    "Six-blade high-speed cutting head",
+    "Vacuum option reduces air bubbles",
+    "Two bowl speeds for chopping and mixing"
+  ],
+  "bestFor": "Sausage, ham and fish-ball factories",
+  "order": 2
+}

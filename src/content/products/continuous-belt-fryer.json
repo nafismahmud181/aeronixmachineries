@@ -1,0 +1,21 @@
+{
+  "name": "Continuous Belt Fryer",
+  "model": "AX-CF3000",
+  "category": "snack-puffed-food",
+  "capacity": "300–500 kg/h",
+  "power": "Electric or gas",
+  "voltage": "380V",
+  "weight": "1,100 kg",
+  "dimensions": "3000 × 1200 × 2200 mm",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/continuous-belt-fryer/image.jpg",
+  "description": "Fries chips, nuts and snacks evenly on a continuous belt, with automatic oil filtration.",
+  "features": [
+    "Oil-water separation keeps oil fresh",
+    "Auto lift hood for cleaning",
+    "Precise temperature control"
+  ],
+  "bestFor": "Snack, chip and peanut processors",
+  "order": 14
+}

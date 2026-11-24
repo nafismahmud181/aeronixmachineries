@@ -1,0 +1,15 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Catalog from '../../../components/Catalog.astro';
+import { getCategories } from '../../../lib/catalog';
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  return categories.map(c => ({ params: { category: c.id }, props: { category: c } }));
+}
+const { category } = Astro.props;
+const desc = `${category.data.name} machines, factory-direct from Guangzhou: ${category.data.subtitle.toLowerCase()}. Built to your voltage, tested on video and shipped worldwide.`;
+---
+<Base title={`${category.data.name} machines`} description={desc} image={category.data.image ?? undefined}>
+  <Catalog activeCategory={category.id} />
+</Base>

@@ -1,0 +1,21 @@
+{
+  "name": "Peanut Butter Grinder",
+  "model": "AX-PB150",
+  "category": "nut-seed",
+  "capacity": "100–150 kg/h",
+  "power": "7.5 kW",
+  "voltage": "380V",
+  "weight": "280 kg",
+  "dimensions": "900 × 450 × 1100 mm",
+  "scale": "both",
+  "featured": false,
+  "image": "/images/products/peanut-butter-grinder/image.jpg",
+  "description": "A colloid mill that grinds peanuts, sesame and almonds into smooth, creamy butter.",
+  "features": [
+    "Adjustable fineness",
+    "Water-cooled grinding chamber",
+    "Also makes tahini and sauces"
+  ],
+  "bestFor": "Nut butter brands and sauce makers",
+  "order": 21
+}

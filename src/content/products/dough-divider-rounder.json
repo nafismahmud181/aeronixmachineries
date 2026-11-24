@@ -1,0 +1,21 @@
+{
+  "name": "Dough Divider & Rounder",
+  "model": "AX-DR36",
+  "category": "bakery-dough",
+  "capacity": "36 pieces/cycle",
+  "power": "0.75 kW",
+  "voltage": "220V",
+  "weight": "260 kg",
+  "dimensions": "600 × 600 × 1400 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/dough-divider-rounder/image.jpg",
+  "description": "Divides and rounds dough into equal pieces in seconds, so every bun weighs the same.",
+  "features": [
+    "30–100 g piece weight",
+    "Interchangeable plates",
+    "Saves hours of hand shaping each day"
+  ],
+  "bestFor": "Bakeries and burger bun producers",
+  "order": 6
+}

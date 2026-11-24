@@ -1,0 +1,21 @@
+{
+  "name": "Vegetable Cutter",
+  "model": "AX-VC660",
+  "category": "fruit-vegetable",
+  "capacity": "300–600 kg/h",
+  "power": "1.1 kW",
+  "voltage": "220V / 380V",
+  "weight": "75 kg",
+  "dimensions": "800 × 500 × 1000 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/vegetable-cutter/image.jpg",
+  "description": "Slices, dices and shreds vegetables and fruit with quick-change blades.",
+  "features": [
+    "Slice, dice, strip and shred",
+    "Thickness adjustable",
+    "Easy to clean, food-grade parts"
+  ],
+  "bestFor": "Restaurants, salad bars and central kitchens",
+  "order": 10
+}

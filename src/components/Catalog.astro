@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import ProductCard from './ProductCard.astro';
+import { getCategories, getProducts, categoryUrl } from '../lib/catalog';
+
+interface Props { activeCategory?: string; }
+const { activeCategory } = Astro.props;
+
+const categories = await getCategories();
+const catName = new Map(categories.map(c => [c.id, c.data.name]));
+const products = (await getProducts()).filter(p => !activeCategory || p.data.category.id === activeCategory);
+const title = activeCategory ? catName.get(activeCategory) ?? 'Machines' : 'All machines';
+const count = `${products.length} ${products.length === 1 ? 'machine' : 'machines'}`;
+---
+<div data-catalog>
+  <section class="page-head">
+    <div class="container page-head-in">
+      <div class="sec-head">
+        <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:0">
+          <a href="/">Home</a><span>/</span>
+          {activeCategory ? <><a href="/machines/">Machines</a><span>/</span><span class="current">{title}</span></> : <span class="current">Machines</span>}
+        </nav>
+        <h1 class="h1">{title}</h1>
+        <span class="mono result-count"><span data-result-count>{count}</span> · Prices quoted per order</span>
+      </div>
+      <label class="search-box">
+        <Icon name="search" />
+        <span class="sr-only">Search machines</span>
+        <input type="search" data-catalog-search placeholder="Search machines">
+      </label>
+    </div>
+  </section>
+  <section class="section" style="padding-top:40px">
+    <div class="container section-stack" style="gap:40px">
+      <div class="filters">
+        <nav class="filter-row" aria-label="Categories">
+          <a class:list={['ax-cat', { 'is-active': !activeCategory }]} href="/machines/" aria-current={!activeCategory ? 'page' : undefined}>All machines</a>
+          {categories.map(c => (
+            <a class:list={['ax-cat', { 'is-active': c.id === activeCategory }]} href={categoryUrl(c.id)} aria-current={c.id === activeCategory ? 'page' : undefined}>{c.data.name}</a>
+          ))}
+        </nav>
+        <div class="filter-row" role="group" aria-label="Business size">
+          <span class="filter-label">Business size:</span>
+          <button type="button" class="ax-scale is-active" data-scale-btn="all" aria-pressed="true">Any</button>
+          <button type="button" class="ax-scale" data-scale-btn="small" aria-pressed="false">Small business</button>
+          <button type="button" class="ax-scale" data-scale-btn="factory" aria-pressed="false">Factory</button>
+        </div>
+      </div>
+      <div class="cards">
+        {products.map(p => <ProductCard product={p} categoryName={catName.get(p.data.category.id) ?? ''} />)}
+      </div>
+      <div class="empty" data-empty hidden={products.length > 0}>
+        <h2 class="h3">No machines match yet</h2>
+        <p>We source far more than we list. Tell us what you need.</p>
+        <a class="btn btn-primary" href="#quote">Ask our team</a>
+      </div>
+    </div>
+  </section>
+</div>

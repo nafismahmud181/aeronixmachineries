@@ -1,0 +1,21 @@
+{
+  "name": "Nut Slicer",
+  "model": "AX-NS300",
+  "category": "nut-seed",
+  "capacity": "200–300 kg/h",
+  "power": "2.2 kW",
+  "voltage": "220V / 380V",
+  "weight": "160 kg",
+  "dimensions": "1000 × 700 × 1300 mm",
+  "scale": "both",
+  "featured": false,
+  "image": "/images/products/nut-slicer/image.jpg",
+  "description": "Cuts almonds, peanuts and other nuts into even slices or strips.",
+  "features": [
+    "Slice thickness 0.6–2 mm",
+    "Low breakage rate",
+    "Quick blade change"
+  ],
+  "bestFor": "Bakery suppliers and nut processors",
+  "order": 20
+}

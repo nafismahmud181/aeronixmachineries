@@ -1,0 +1,21 @@
+{
+  "name": "Spiral Dough Mixer",
+  "model": "AX-DM50",
+  "category": "bakery-dough",
+  "capacity": "50 kg flour/batch",
+  "power": "3 kW",
+  "voltage": "220V / 380V",
+  "weight": "280 kg",
+  "dimensions": "1050 × 650 × 1250 mm",
+  "scale": "both",
+  "featured": true,
+  "image": "/images/products/spiral-dough-mixer/image.jpg",
+  "description": "Develops strong, elastic dough for bread, pizza and buns with a gentle spiral action.",
+  "features": [
+    "Two speeds plus reverse bowl",
+    "Safety guard with auto-stop",
+    "Thick stainless steel bowl"
+  ],
+  "bestFor": "Bakeries, pizzerias and bread factories",
+  "order": 5
+}

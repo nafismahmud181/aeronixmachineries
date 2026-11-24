@@ -1,0 +1,21 @@
+{
+  "name": "IQF Spiral Freezer",
+  "model": "AX-SF500",
+  "category": "frozen-food",
+  "capacity": "500 kg/h",
+  "power": "Custom",
+  "voltage": "380V",
+  "weight": "Custom",
+  "dimensions": "Custom to your site",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/iqf-spiral-freezer/image.jpg",
+  "description": "Quick-freezes dumplings, meat and seafood individually to lock in freshness.",
+  "features": [
+    "Fast freezing keeps texture",
+    "Space-saving spiral design",
+    "Stainless steel mesh belt"
+  ],
+  "bestFor": "Frozen food and seafood factories",
+  "order": 23
+}

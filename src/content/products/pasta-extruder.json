@@ -1,0 +1,21 @@
+{
+  "name": "Pasta Extruder",
+  "model": "AX-PE100",
+  "category": "noodle-pasta",
+  "capacity": "80–100 kg/h",
+  "power": "7.5 kW",
+  "voltage": "380V",
+  "weight": "520 kg",
+  "dimensions": "1700 × 900 × 1700 mm",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/pasta-extruder/image.jpg",
+  "description": "Extrudes macaroni, penne, spaghetti and shapes with bronze dies for a classic texture.",
+  "features": [
+    "Bronze dies for many shapes",
+    "Vacuum mixing chamber",
+    "Cutter speed controls length"
+  ],
+  "bestFor": "Pasta producers and food distributors",
+  "order": 18
+}

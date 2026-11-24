@@ -1,0 +1,21 @@
+{
+  "name": "Seasoning Drum",
+  "model": "AX-SD800",
+  "category": "snack-puffed-food",
+  "capacity": "200–500 kg/h",
+  "power": "0.75 kW",
+  "voltage": "220V / 380V",
+  "weight": "150 kg",
+  "dimensions": "1800 × 900 × 1500 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/seasoning-drum/image.jpg",
+  "description": "Coats snacks, nuts and chips evenly with powder or liquid seasoning.",
+  "features": [
+    "Octagonal drum for even coating",
+    "Adjustable tilt and speed",
+    "Optional automatic powder feeder"
+  ],
+  "bestFor": "Snack startups and nut roasters",
+  "order": 15
+}

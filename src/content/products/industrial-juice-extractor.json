@@ -1,0 +1,21 @@
+{
+  "name": "Industrial Juice Extractor",
+  "model": "AX-JX500",
+  "category": "fruit-vegetable",
+  "capacity": "500 kg/h",
+  "power": "3 kW",
+  "voltage": "380V",
+  "weight": "180 kg",
+  "dimensions": "1200 × 600 × 1300 mm",
+  "scale": "both",
+  "featured": false,
+  "image": "/images/products/industrial-juice-extractor/image.jpg",
+  "description": "Presses fresh juice from oranges, apples, pineapples and sugarcane with high yield.",
+  "features": [
+    "Spiral press for high juice yield",
+    "Separate pulp outlet",
+    "Food-grade stainless steel"
+  ],
+  "bestFor": "Juice bars, beverage startups and fruit processors",
+  "order": 12
+}

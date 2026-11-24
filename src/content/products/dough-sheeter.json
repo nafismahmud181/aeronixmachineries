@@ -1,0 +1,21 @@
+{
+  "name": "Dough Sheeter",
+  "model": "AX-DS520",
+  "category": "bakery-dough",
+  "capacity": "520 mm sheet width",
+  "power": "0.75 kW",
+  "voltage": "220V",
+  "weight": "210 kg",
+  "dimensions": "2600 × 950 × 1200 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/dough-sheeter/image.jpg",
+  "description": "Rolls dough to an even thickness for croissants, puff pastry, pizza bases and flatbreads.",
+  "features": [
+    "Thickness from 0.5 to 40 mm",
+    "Foldable tables save space",
+    "Reversible conveyor belts"
+  ],
+  "bestFor": "Pastry shops, bakeries and hotels",
+  "order": 8
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Vegetable Washer & Peeler",
+  "model": "AX-VW1000",
+  "category": "fruit-vegetable",
+  "capacity": "500–1,000 kg/h",
+  "power": "2.2 kW",
+  "voltage": "380V",
+  "weight": "420 kg",
+  "dimensions": "2400 × 900 × 1300 mm",
+  "scale": "factory",
+  "featured": true,
+  "image": "/images/products/vegetable-washer-peeler/image.jpg",
+  "description": "Brush-washes and peels potatoes, carrots, ginger and other root vegetables continuously.",
+  "features": [
+    "Soft nylon brush rollers",
+    "Built-in water spray system",
+    "Adjustable peeling time"
+  ],
+  "bestFor": "Chip and fries factories, vegetable processors",
+  "order": 9
+}

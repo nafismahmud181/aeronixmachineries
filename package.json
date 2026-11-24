@@ -1,0 +1,25 @@
+{
+  "name": "aeronix-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/react": "7.1.9",
+    "@astrojs/sitemap": "3.7.6",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/lexend-exa": "5.3.0",
+    "@keystatic/astro": "6.0.0",
+    "@keystatic/core": "0.6.10",
+    "astro": "7.4.13",
+    "lucide": "1.79.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

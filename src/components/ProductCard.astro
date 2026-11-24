@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import { productUrl, productSpec, type Product } from '../lib/catalog';
+
+interface Props { product: Product; categoryName: string; }
+const { product: p, categoryName } = Astro.props;
+const search = [p.data.name, p.data.model, categoryName, p.data.description].join(' ').toLowerCase();
+---
+<a class="card" href={productUrl(p)} data-card data-cat={p.data.category.id} data-scale={p.data.scale} data-search={search}>
+  <div class="card-media">
+    {p.data.image
+      ? <img class="cover" src={p.data.image} alt={p.data.name} loading="lazy" decoding="async" width="600" height="600">
+      : <div class="img-ph">{p.data.name}</div>}
+  </div>
+  <div class="card-body">
+    <span class="card-cat">{categoryName}</span>
+    <span class="card-name">{p.data.name}</span>
+    <span class="card-spec mono">{productSpec(p)}</span>
+    <span class="link-arrow">View details<Icon name="arrow-right" /></span>
+  </div>
+</a>

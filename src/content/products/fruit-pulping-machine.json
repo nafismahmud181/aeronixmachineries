@@ -1,0 +1,21 @@
+{
+  "name": "Fruit Pulping Machine",
+  "model": "AX-FP1",
+  "category": "fruit-vegetable",
+  "capacity": "1–2 t/h",
+  "power": "5.5 kW",
+  "voltage": "380V",
+  "weight": "350 kg",
+  "dimensions": "1500 × 600 × 1400 mm",
+  "scale": "factory",
+  "featured": false,
+  "image": "/images/products/fruit-pulping-machine/image.jpg",
+  "description": "Separates pulp from seeds and skin for jam, juice concentrate and purée production.",
+  "features": [
+    "Changeable sieve sizes",
+    "Works with mango, tomato, berries and more",
+    "Continuous feeding"
+  ],
+  "bestFor": "Jam, sauce and purée producers",
+  "order": 11
+}

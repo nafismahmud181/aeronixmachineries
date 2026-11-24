@@ -1,0 +1,14 @@
+---
+// TODO before launch: replace this placeholder with the final, reviewed Terms of Use.
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+<Base title="Terms of Use" noindex showQuote={false}>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Legal</p>
+      <h1 class="h2">Terms of Use</h1>
+      <p>This page is being prepared. If you have any questions in the meantime, email us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+    </div>
+  </section>
+</Base>

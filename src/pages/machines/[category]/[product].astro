@@ -1,0 +1,101 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { getCategories, getProducts, categoryUrl, productUrl } from '../../../lib/catalog';
+import { SITE, waLink } from '../../../data/site';
+
+export async function getStaticPaths() {
+  const products = await getProducts();
+  return products.map(p => ({ params: { category: p.data.category.id, product: p.id }, props: { product: p } }));
+}
+
+const { product: p } = Astro.props;
+const d = p.data;
+const categories = await getCategories();
+const catName = new Map(categories.map(c => [c.id, c.data.name]));
+const category = catName.get(d.category.id) ?? 'Machines';
+const related = (await getProducts()).filter(r => r.data.category.id === d.category.id && r.id !== p.id);
+
+const specs = [
+  ['Model', d.model], ['Capacity', d.capacity], ['Power', d.power],
+  ['Voltage', `${d.voltage || '220V / 380V'} (custom available)`],
+  ['Weight', d.weight || '—'], ['Dimensions', d.dimensions || '—'],
+  ['Material', 'Food-grade SUS304 stainless steel'],
+  ['Certification', 'CE available on request'],
+  ['Lead time', 'Usually 15–30 days']
+];
+const description = `${d.name} (${d.model}): ${d.description} Factory-direct from Guangzhou, built to your voltage and shipped worldwide.`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: d.name,
+  model: d.model,
+  sku: d.model,
+  description: d.description,
+  category,
+  image: d.image ? new URL(d.image, Astro.site).toString() : undefined,
+  url: new URL(productUrl(p), Astro.site).toString(),
+  brand: { '@type': 'Brand', name: SITE.name }
+};
+---
+<Base title={`${d.name} (${d.model})`} description={description} image={d.image ?? undefined} preselect={d.name}>
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/machines/">Machines</a><span>/</span>
+      <a href={categoryUrl(d.category.id)}>{category}</a><span>/</span>
+      <span class="current">{d.name}</span>
+    </nav>
+    <section class="pdp">
+      <div class="pdp-gallery">
+        <div class="pdp-main">
+          {d.image
+            ? <img class="cover" src={d.image} alt={d.name} width="800" height="800" fetchpriority="high">
+            : <div class="img-ph">{d.name}</div>}
+        </div>
+      </div>
+      <div class="pdp-info">
+        <span class="card-cat">{category}</span>
+        <h1 class="h1">{d.name}</h1>
+        <p class="lead">{d.description}</p>
+        <div class="pdp-facts">
+          <div class="pdp-fact"><small>Capacity</small><strong>{d.capacity || '—'}</strong></div>
+          <div class="pdp-fact"><small>Power</small><strong>{d.power || '—'}</strong></div>
+        </div>
+        <div class="pdp-actions">
+          <a class="btn btn-primary btn-block" href="#quote" data-quote-machine={d.name}>Get a quote for this machine</a>
+          <a class="btn btn-outline btn-block" href={waLink(`Hello Aeronix, I am interested in the ${d.name} (${d.model}).`)} target="_blank" rel="noopener"><Icon name="message-circle" />Ask on WhatsApp</a>
+        </div>
+        <span class="pdp-note">Built to your voltage and plug type. Video test run before shipping.</span>
+      </div>
+    </section>
+  </div>
+  <section class="section section--soft">
+    <div class="container pdp-details">
+      <div class="pdp-col">
+        <h2 class="h2" style="font-size:clamp(22px,2.4vw,30px)">Specifications</h2>
+        <div class="spec-table">
+          {specs.map(([k, v]) => <div class="spec-row"><span>{k}</span><span>{v}</span></div>)}
+        </div>
+      </div>
+      <div class="pdp-col">
+        <h2 class="h2" style="font-size:clamp(22px,2.4vw,30px)">Why customers choose it</h2>
+        <ul class="feat-list">
+          {d.features.map(f => <li><Icon name="circle-check" /><span>{f}</span></li>)}
+        </ul>
+        {d.bestFor && <div class="best-for"><small>Best for</small><strong>{d.bestFor}</strong></div>}
+      </div>
+    </div>
+  </section>
+  {related.length > 0 && (
+    <section class="section">
+      <div class="container section-stack" style="gap:40px">
+        <h2 class="h2" style="font-size:clamp(22px,2.4vw,30px)">You might also need</h2>
+        <div class="cards">
+          {related.map(r => <ProductCard product={r} categoryName={category} />)}
+        </div>
+      </div>
+    </section>
+  )}
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+</Base>

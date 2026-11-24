@@ -1,0 +1,21 @@
+{
+  "name": "Fresh Noodle Machine",
+  "model": "AX-NM60",
+  "category": "noodle-pasta",
+  "capacity": "60–80 kg/h",
+  "power": "3 kW",
+  "voltage": "220V / 380V",
+  "weight": "260 kg",
+  "dimensions": "1500 × 650 × 1200 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/fresh-noodle-machine/image.jpg",
+  "description": "Presses and cuts fresh noodles in different widths, from thin ramen to wide flat noodles.",
+  "features": [
+    "Multiple cutter widths included",
+    "Multi-roller pressing for smooth texture",
+    "Simple to operate"
+  ],
+  "bestFor": "Noodle shops, restaurants and small factories",
+  "order": 17
+}

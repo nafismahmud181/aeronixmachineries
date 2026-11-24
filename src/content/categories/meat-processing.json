@@ -1,0 +1,7 @@
+{
+  "name": "Meat processing",
+  "subtitle": "Grinders, bowl cutters, formers",
+  "icon": "beef",
+  "image": "/images/categories/meat-processing/image.jpg",
+  "order": 1
+}

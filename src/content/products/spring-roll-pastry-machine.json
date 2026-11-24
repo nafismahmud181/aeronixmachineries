@@ -1,0 +1,21 @@
+{
+  "name": "Spring Roll Pastry Machine",
+  "model": "AX-SP2000",
+  "category": "frozen-food",
+  "capacity": "2,000 sheets/h",
+  "power": "Gas or electric",
+  "voltage": "220V / 380V",
+  "weight": "450 kg",
+  "dimensions": "4000 × 900 × 1400 mm",
+  "scale": "both",
+  "featured": false,
+  "image": "/images/products/spring-roll-pastry-machine/image.jpg",
+  "description": "Produces thin, even sheets for spring rolls, samosas and crepes on a heated drum.",
+  "features": [
+    "Adjustable sheet size and thickness",
+    "Automatic cutting and stacking",
+    "Even heat for consistent sheets"
+  ],
+  "bestFor": "Frozen snack makers and caterers",
+  "order": 24
+}

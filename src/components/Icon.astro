@@ -1,0 +1,30 @@
+---
+// Renders a Lucide icon as inline SVG at build time (no icon JS shipped to the browser).
+import * as lucide from 'lucide';
+
+interface Props { name: string; class?: string; }
+const { name, class: className = '' } = Astro.props;
+
+// Icons Lucide no longer ships (brand marks), drawn in the same 24px outline style.
+const custom: Record<string, unknown> = {
+  instagram: [
+    ['rect', { x: '2', y: '2', width: '20', height: '20', rx: '5', ry: '5' }],
+    ['circle', { cx: '12', cy: '12', r: '4' }],
+    ['line', { x1: '17.5', x2: '17.51', y1: '6.5', y2: '6.5' }]
+  ]
+};
+
+const pascal = name.replace(/(^|-)([a-z0-9])/g, (_m: string, _d: string, c: string) => c.toUpperCase());
+const lib = lucide as unknown as Record<string, unknown> & { icons?: Record<string, unknown> };
+let node = (custom[name] ?? lib.icons?.[pascal] ?? lib[pascal]) as unknown;
+if (!node) throw new Error(`Unknown Lucide icon: "${name}"`);
+// Lucide 1.x exports the children array; older versions wrap it as ['svg', attrs, children].
+if (Array.isArray(node) && node[0] === 'svg') node = node[2];
+
+type IconNode = [string, Record<string, string | number>][];
+const esc = (v: string | number) => String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+const inner = (node as IconNode)
+  .map(([tag, attrs]) => `<${tag} ${Object.entries(attrs).map(([k, v]) => `${k}="${esc(v)}"`).join(' ')}/>`)
+  .join('');
+---
+<span class:list={['ico', className]} aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" set:html={inner}></svg></span>

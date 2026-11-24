@@ -1,0 +1,43 @@
+---
+import { NAV, SITE, waLink } from '../data/site';
+import { getCategories, categoryUrl } from '../lib/catalog';
+
+const categories = await getCategories();
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img class="brand-mark" src="/brand/aeronix-mark-white.png" alt="" width="460" height="400" loading="lazy">
+          <img class="brand-word" src="/brand/aeronix-wordmark-white.png" alt={SITE.name} width="1300" height="125" loading="lazy">
+        </div>
+        <p>{SITE.tagline}</p>
+      </div>
+      <div class="footer-col footer-col--machines">
+        <h3>Machines</h3>
+        {categories.map(c => <a class="footer-link" href={categoryUrl(c.id)}>{c.data.name}</a>)}
+        <a class="footer-link" href="/machines/">All machines</a>
+      </div>
+      <div class="footer-col footer-col--company">
+        <h3>Company</h3>
+        {NAV.map(n => <a class="footer-link" href={n.href}>{n.label}</a>)}
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <a class="footer-link" href={waLink()} target="_blank" rel="noopener">WhatsApp {SITE.whatsappDisplay}</a>
+        <a class="footer-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a class="footer-link" href={SITE.instagramUrl} target="_blank" rel="noopener">Instagram</a>
+        <span>Guangzhou, China · Shipping worldwide</span>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© {year} {SITE.name}</span>
+      <nav aria-label="Legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+{
+  "name": "Bone Saw Machine",
+  "model": "AX-MS600",
+  "category": "meat-processing",
+  "capacity": "500–600 kg/h",
+  "power": "1.5 kW",
+  "voltage": "220V / 380V",
+  "weight": "95 kg",
+  "dimensions": "650 × 600 × 1650 mm",
+  "scale": "small",
+  "featured": false,
+  "image": "/images/products/bone-saw-machine/image.jpg",
+  "description": "Cuts frozen meat, ribs, fish and bones cleanly with an adjustable thickness guide.",
+  "features": [
+    "Stainless steel table and frame",
+    "Adjustable cutting thickness",
+    "Safety blade guard"
+  ],
+  "bestFor": "Butchers, supermarkets and meat shops",
+  "order": 4
+}

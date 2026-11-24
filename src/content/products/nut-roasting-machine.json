@@ -1,0 +1,21 @@
+{
+  "name": "Nut Roasting Machine",
+  "model": "AX-NR200",
+  "category": "nut-seed",
+  "capacity": "100–200 kg/batch",
+  "power": "Gas or electric",
+  "voltage": "380V",
+  "weight": "600 kg",
+  "dimensions": "2200 × 1100 × 1700 mm",
+  "scale": "both",
+  "featured": true,
+  "image": "/images/products/nut-roasting-machine/image.jpg",
+  "description": "Roasts peanuts, almonds, seeds and coffee evenly in a rotating drum.",
+  "features": [
+    "Even heat from rotating drum",
+    "Fast discharge and cooling",
+    "Works with peanuts, sesame, seeds and beans"
+  ],
+  "bestFor": "Nut brands, peanut butter makers and seed processors",
+  "order": 19
+}

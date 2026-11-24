@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import { SITE, waLink } from '../data/site';
+import { getProducts } from '../lib/catalog';
+
+interface Props { preselect?: string; }
+const { preselect = '' } = Astro.props;
+const products = await getProducts();
+const NOT_SURE = 'Not sure yet, please advise';
+
+// Set PUBLIC_FORM_ENDPOINT (and PUBLIC_FORM_ACCESS_KEY for Web3Forms) in .env to send
+// requests by email. Without it, the form opens WhatsApp with the visitor's details.
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || '';
+const accessKey = import.meta.env.PUBLIC_FORM_ACCESS_KEY || '';
+---
+<section id="quote" class="section section--navy on-dark">
+  <div class="container quote">
+    <div class="quote-info reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2">Let's find the right machine for you.</h2>
+      <p class="lead">Tell us what you make. You'll get a clear quote with options, lead time and shipping cost, usually within one working day.</p>
+      <div class="contact-list">
+        <a class="contact-row" href={waLink()} target="_blank" rel="noopener"><span class="ico-box"><Icon name="message-circle" /></span><span><small>WhatsApp</small><strong>{SITE.whatsappDisplay}</strong></span></a>
+        <a class="contact-row" href={`mailto:${SITE.email}`}><span class="ico-box"><Icon name="mail" /></span><span><small>Email</small><strong>{SITE.email}</strong></span></a>
+        <a class="contact-row" href={SITE.instagramUrl} target="_blank" rel="noopener"><span class="ico-box"><Icon name="instagram" /></span><span><small>Instagram</small><strong>{SITE.instagramHandle}</strong></span></a>
+      </div>
+    </div>
+    <div class="form reveal">
+      <form id="quote-form" class="form-fields" novalidate data-endpoint={endpoint} data-access-key={accessKey} data-wa={SITE.whatsappNumber} style="display:flex;flex-direction:column;gap:16px">
+        <h3 class="h3 form-title">Request a quote</h3>
+        <div class="form-row">
+          <div class="field"><label for="qf-name">Your name <span class="req">*</span></label><input id="qf-name" name="name" class="input" autocomplete="name" required placeholder=" "></div>
+          <div class="field"><label for="qf-country">Country <span class="req">*</span></label><input id="qf-country" name="country" class="input" autocomplete="country-name" required placeholder=" "></div>
+        </div>
+        <div class="field"><label for="qf-contact">Email or WhatsApp number <span class="req">*</span></label><input id="qf-contact" name="contact" class="input" required placeholder=" "></div>
+        <div class="field"><label for="qf-machine">Machine</label>
+          <select id="qf-machine" name="machine" class="input">
+            <option value={NOT_SURE} selected={!preselect}>{NOT_SURE}</option>
+            {products.map(p => <option value={p.data.name} selected={p.data.name === preselect}>{p.data.name}</option>)}
+          </select>
+        </div>
+        <div class="field"><label for="qf-msg">What do you make, and how much per day?</label><textarea id="qf-msg" name="message" class="input" rows="4"></textarea></div>
+        <label class="check"><input type="checkbox" name="tour" value="yes"> I'd like a live video factory tour</label>
+        <p class="form-error" data-form-error hidden></p>
+        <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary btn-block" type="submit" data-submit>Send request<Icon name="arrow-right" class="ico-nudge" /></button>
+        {!endpoint && <p class="form-note">Sending opens WhatsApp with your details filled in.</p>}
+        <p class="form-note">By sending, you agree to our <a href="/privacy/">Privacy Policy</a>.</p>
+      </form>
+      <div class="form-done" data-form-done hidden>
+        <Icon name="circle-check" class="done-ico" />
+        <h3 class="h3">Thank you! We've got it.</h3>
+        <p>We'll reply within one working day. For a faster answer, message us on WhatsApp.</p>
+        <a class="btn btn-wa" href={waLink()} target="_blank" rel="noopener"><Icon name="message-circle" />Open WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

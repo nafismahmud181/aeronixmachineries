@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { HERO_SLIDES, TICKER, REASONS, STEPS, SHIPPING, CASES, FAQS, SITE, waLink } from '../data/site';
+import { getCategories, getProducts, categoryUrl } from '../lib/catalog';
+
+const categories = await getCategories();
+const catName = new Map(categories.map(c => [c.id, c.data.name]));
+const featured = (await getProducts()).filter(p => p.data.featured);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', name: SITE.name, url: Astro.site?.toString(), logo: new URL('/icon-512.png', Astro.site).toString(), email: SITE.email, sameAs: [SITE.instagramUrl],
+      address: { '@type': 'PostalAddress', addressLocality: 'Guangzhou', addressCountry: 'CN' } },
+    { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
+  ]
+};
+
+// Alternate photo and navy tiles in a checkerboard (4 columns on desktop).
+const tiles = categories.map((c, i) => ({
+  c,
+  photo: !!c.data.image && (i + Math.floor(i / 4)) % 2 === 0
+}));
+---
+<Base>
+  <!-- Hero slider -->
+  <section class="hero" data-hero aria-roledescription="carousel" aria-label="Highlights">
+    {HERO_SLIDES.map((s, i) => (
+      <div class:list={['hero-slide', { 'is-active': i === 0 }]} aria-hidden={i === 0 ? 'false' : 'true'} aria-roledescription="slide" aria-label={`${i + 1} of ${HERO_SLIDES.length}`}>
+        <div class="hero-media">
+          <img src={s.image} alt={s.alt} fetchpriority={i === 0 ? 'high' : 'auto'} loading={i === 0 ? 'eager' : 'lazy'} decoding="async">
+          {s.video && (
+            <video muted loop playsinline preload="none" aria-hidden="true" hidden
+              data-wide="/hero/hero-wide.mp4" data-wide-webm="/hero/hero-wide.webm"
+              data-mobile="/hero/hero-mobile.mp4" data-poster-mobile="/hero/hero-poster-mobile.jpg"
+              poster="/hero/hero-poster.jpg"></video>
+          )}
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <p class="eyebrow">{s.eyebrow}</p>
+          {i === 0 ? <h1 class="h1">{s.title}</h1> : <h2 class="h1">{s.title}</h2>}
+          <p class="lead">{s.text}</p>
+          <a class="btn btn-primary" href={s.cta.href} tabindex={i === 0 ? undefined : -1}>{s.cta.label}<Icon name="arrow-right" class="ico-nudge" /></a>
+        </div>
+      </div>
+    ))}
+    <div class="hero-controls">
+      <div class="container hero-controls-in">
+        <div class="hero-count">
+          <span class="hero-num"><span data-hero-num aria-live="polite">01</span><small>/ {String(HERO_SLIDES.length).padStart(2, '0')}</small></span>
+          <div class="hero-bars">
+            {HERO_SLIDES.map((_, i) => <button type="button" class:list={['hero-bar', { 'is-active': i === 0 }]} aria-label={`Show slide ${i + 1}`}></button>)}
+          </div>
+        </div>
+        <div class="hero-arrows">
+          <button class="hero-arrow" type="button" data-hero-prev aria-label="Previous slide"><Icon name="chevron-left" /></button>
+          <button class="hero-arrow" type="button" data-hero-next aria-label="Next slide"><Icon name="chevron-right" /></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <section class="ticker" aria-label="Machines we supply">
+    <div class="ticker-track">
+      {[...TICKER, ...TICKER].map((t, i) => <span class="ticker-item" aria-hidden={i >= TICKER.length ? 'true' : undefined}>{t}</span>)}
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container section-stack">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Product areas</p>
+        <h2 class="h2">What are you making?</h2>
+        <p class="lead">Choose your product area. We'll help you find the right machine for it.</p>
+      </div>
+      <div class="tiles reveal">
+        {tiles.map(({ c, photo }) => (
+          <a class:list={['tile', photo ? 'tile--photo' : 'tile--navy']} href={categoryUrl(c.id)}>
+            {photo && (
+              <>
+                <div class="tile-media"><img class="cover" src={c.data.image!} alt="" loading="lazy" decoding="async"></div>
+                <div class="tile-overlay"></div>
+              </>
+            )}
+            <span class="tile-body">
+              <Icon name={c.data.icon} class="tile-icon" />
+              <span class="tile-foot">
+                <span class="tile-label">{c.data.name}<span class="tile-sub">{c.data.subtitle}</span></span>
+                <Icon name="arrow-right" class="tile-arrow" />
+              </span>
+            </span>
+          </a>
+        ))}
+        <a class="tile tile--soft" href="#quote">
+          <span class="tile-body">
+            <Icon name="message-square-more" class="tile-icon" />
+            <span class="tile-foot">
+              <span class="tile-label">Something else?<span class="tile-sub">We source far more than we list. Just tell us what you make.</span></span>
+              <Icon name="arrow-right" class="tile-arrow" />
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular machines -->
+  <section class="section section--soft">
+    <div class="container section-stack">
+      <div class="sec-head-row reveal">
+        <div class="sec-head">
+          <p class="eyebrow">Best sellers</p>
+          <h2 class="h2">Popular machines</h2>
+          <p class="lead">The ones our customers order most.</p>
+        </div>
+        <a class="btn btn-outline" href="/machines/">View all machines<Icon name="arrow-right" class="ico-nudge" /></a>
+      </div>
+      <div class="cards">
+        {featured.map(p => <ProductCard product={p} categoryName={catName.get(p.data.category.id) ?? ''} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Split: factory prices -->
+  <section class="split split--text-left">
+    <div class="split-text on-dark">
+      <div class="split-text-in reveal">
+        <p class="eyebrow">Why Aeronix</p>
+        <h2 class="h2">Factory prices, without the worry.</h2>
+        <p class="lead">Buying machinery from overseas can feel risky. We're your team on the ground in Guangzhou, so you get the savings of buying direct, with someone you can trust.</p>
+        <a class="link-arrow" href="#about">Read more<Icon name="arrow-right" /></a>
+      </div>
+    </div>
+    <div class="split-media">
+      <img class="cover" src="/images/site/split-factory.jpg" alt="Stainless steel bowl cutter in a production kitchen" loading="lazy" decoding="async">
+    </div>
+  </section>
+  <section class="container">
+    <div class="reasons reveal">
+      {REASONS.map(r => (
+        <div class="reason">
+          <Icon name={r.icon} />
+          <h3 class="h3">{r.title}</h3>
+          <p>{r.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="process" class="section">
+    <div class="container section-stack">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Our process</p>
+        <h2 class="h2">How it works</h2>
+        <p class="lead">Five simple steps, from first message to first batch.</p>
+      </div>
+      <ol class="steps reveal" style="list-style:none;margin:0;padding:0">
+        {STEPS.map(s => (
+          <li class="step">
+            <span class="step-num" aria-hidden="true">{s.n}</span>
+            <span class="step-mark"><span></span></span>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 class="h3">{s.title}</h3>
+              <p>{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Split: shipping -->
+  <section id="shipping" class="split split--text-right">
+    <div class="split-text on-dark">
+      <div class="split-text-in reveal">
+        <p class="eyebrow">Shipping &amp; setup</p>
+        <h2 class="h2">We ship worldwide, and help you set up.</h2>
+        <p class="lead">From our factory floor to your kitchen, we take care of the hard parts.</p>
+        <ul class="split-list">
+          {SHIPPING.map(s => <li><Icon name={s.icon} /><div><strong>{s.k}</strong><span>{s.v}</span></div></li>)}
+        </ul>
+        <a class="link-arrow" href="#quote">Get a shipping quote<Icon name="arrow-right" /></a>
+      </div>
+    </div>
+    <div class="split-media">
+      <img class="cover" src="/images/site/hero-shipping.jpg" alt="Container ship at port" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Customer stories -->
+  <section class="section section--soft">
+    <div class="container section-stack">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Customer stories</p>
+        <h2 class="h2">From small kitchens to growing factories.</h2>
+      </div>
+      <div class="stories reveal">
+        {CASES.map(c => (
+          <article class="story">
+            <div class="story-body">
+              <Icon name="quote" class="story-icon" />
+              <span class="card-cat">{c.tag}</span>
+              <h3 class="h3">{c.title}</h3>
+              <p>{c.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Split: video tour -->
+  <section class="split split--text-left">
+    <div class="split-text on-dark">
+      <div class="split-text-in reveal">
+        <p class="eyebrow">Live factory tour</p>
+        <h2 class="h2">See your machine running before you buy.</h2>
+        <p class="lead">Book a free live video tour of the factory. We'll test it with your own product.</p>
+        <div class="split-actions">
+          <a class="btn btn-primary" href="#quote">Book a video tour<Icon name="arrow-right" class="ico-nudge" /></a>
+          <a class="link-arrow" href={waLink()} target="_blank" rel="noopener">WhatsApp us<Icon name="arrow-right" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="split-media">
+      <img class="cover" src="/images/site/split-tour.jpg" alt="Extruder line running in the factory" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- About + Instagram -->
+  <section id="about" class="section">
+    <div class="container about">
+      <div class="about-text reveal">
+        <p class="eyebrow">About Aeronix</p>
+        <h2 class="h2">Hello from Guangzhou.</h2>
+        <p>Aeronix Machinery is based in Guangzhou, at the heart of China's food machinery industry. We work side by side with the factories that build these machines, so we know which ones are built well.</p>
+        <p>Whether you're opening your first bakery or adding a line to a busy plant, we treat your order like our own.</p>
+      </div>
+      <div class="insta-panel on-dark reveal">
+        <Icon name="instagram" class="insta-icon" />
+        <h3 class="h3">Follow us on Instagram</h3>
+        <p class="lead">See our latest machines and factory updates.</p>
+        <a class="btn btn-outline-light" href={SITE.instagramUrl} target="_blank" rel="noopener">{SITE.instagramHandle}<Icon name="arrow-right" class="ico-nudge" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--soft">
+    <div class="container faq">
+      <div class="sec-head faq-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2">Common questions</h2>
+        <p class="lead">Still unsure? <a href={waLink()} target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
+      </div>
+      <div class="faq-list reveal">
+        {FAQS.map((f, i) => (
+          <details class="faq-item" open={i === 0}>
+            <summary class="faq-q"><span>{f.q}</span><Icon name="plus" class="ico-plus" /><Icon name="minus" class="ico-minus" /></summary>
+            <p class="faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+</Base>
