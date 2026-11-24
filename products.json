@@ -1,0 +1,545 @@
+{
+  "categories": [
+    {
+      "id": "meat",
+      "name": "Meat processing",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Sausage_making-H-5-edited2.jpg/960px-Sausage_making-H-5-edited2.jpg"
+    },
+    {
+      "id": "bakery",
+      "name": "Bakery & dough",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/SSF_Costco_bakery_pastry_packaging_line.JPG/960px-SSF_Costco_bakery_pastry_packaging_line.JPG"
+    },
+    {
+      "id": "fruitveg",
+      "name": "Fruit & vegetable",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Potatoes_Move_Down_a_Conveyor_Belt_Before_Being_Made_into_Potato_Flakes_-_NARA_-_5956656.jpg/960px-Potatoes_Move_Down_a_Conveyor_Belt_Before_Being_Made_into_Potato_Flakes_-_NARA_-_5956656.jpg"
+    },
+    {
+      "id": "snack",
+      "name": "Snack & puffed food",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Potato_chips_in_fryer.jpg/960px-Potato_chips_in_fryer.jpg"
+    },
+    {
+      "id": "noodle",
+      "name": "Noodle & pasta",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Production_of_instant_noodles.jpg/960px-Production_of_instant_noodles.jpg"
+    },
+    {
+      "id": "nut",
+      "name": "Nut & seed",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Cashew_roasting_trad_2.jpg/960px-Cashew_roasting_trad_2.jpg"
+    },
+    {
+      "id": "frozen",
+      "name": "Frozen food",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Missgyoza_production_gyoza_dumpling_Manufacturer.jpg/960px-Missgyoza_production_gyoza_dumpling_Manufacturer.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": "mg32",
+      "name": "Industrial Meat Grinder",
+      "model": "AX-MG32",
+      "category": "meat",
+      "capacity": "300–800 kg/h",
+      "power": "4 kW",
+      "voltage": "220V / 380V",
+      "weight": "120 kg",
+      "dimensions": "900 × 560 × 1050 mm",
+      "scale": "both",
+      "featured": true,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mischwolf_Industrie_MAW200.jpg/960px-Mischwolf_Industrie_MAW200.jpg",
+      "description": "Grinds fresh and frozen meat in one pass, with interchangeable plates from coarse to fine.",
+      "features": [
+        "Handles frozen blocks down to −18 °C",
+        "Quick-release head for fast cleaning",
+        "Reverse function clears jams safely"
+      ],
+      "bestFor": "Butchers, central kitchens and sausage producers"
+    },
+    {
+      "id": "bc80",
+      "name": "Vacuum Bowl Cutter",
+      "model": "AX-BC80",
+      "category": "meat",
+      "capacity": "80 L bowl",
+      "power": "15 kW",
+      "voltage": "380V",
+      "weight": "650 kg",
+      "dimensions": "1900 × 1350 × 1300 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg/960px-Kutr_na_p%C5%99%C3%ADpravu_masa%2C_pomaz%C3%A1nek%2C_zav%C3%A1%C5%99ek_a_brambor%C3%A1kov%C3%A9ho_t%C4%9Bsta.jpg",
+      "description": "Chops, mixes and emulsifies meat for sausages, meatballs and fish paste with a smooth, even texture.",
+      "features": [
+        "Six-blade high-speed cutting head",
+        "Vacuum option reduces air bubbles",
+        "Two bowl speeds for chopping and mixing"
+      ],
+      "bestFor": "Sausage, ham and fish-ball factories"
+    },
+    {
+      "id": "mb200",
+      "name": "Automatic Meatball Former",
+      "model": "AX-MB200",
+      "category": "meat",
+      "capacity": "200–250 pcs/min",
+      "power": "1.5 kW",
+      "voltage": "220V / 380V",
+      "weight": "85 kg",
+      "dimensions": "700 × 450 × 1100 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Making_Swedish_Meatballs_%286901900059%29.jpg/960px-Making_Swedish_Meatballs_%286901900059%29.jpg",
+      "description": "Forms round, even meatballs in adjustable sizes, ready for boiling, frying or freezing.",
+      "features": [
+        "Size adjustable from 13 to 30 mm",
+        "Works with meat, fish and vegetable fillings",
+        "Compact footprint for small kitchens"
+      ],
+      "bestFor": "Restaurants, hot-pot suppliers and frozen food makers"
+    },
+    {
+      "id": "ms600",
+      "name": "Bone Saw Machine",
+      "model": "AX-MS600",
+      "category": "meat",
+      "capacity": "500–600 kg/h",
+      "power": "1.5 kW",
+      "voltage": "220V / 380V",
+      "weight": "95 kg",
+      "dimensions": "650 × 600 × 1650 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Butcher_in_the_Grainer_Market_%286466341729%29.jpg/960px-Butcher_in_the_Grainer_Market_%286466341729%29.jpg",
+      "description": "Cuts frozen meat, ribs, fish and bones cleanly with an adjustable thickness guide.",
+      "features": [
+        "Stainless steel table and frame",
+        "Adjustable cutting thickness",
+        "Safety blade guard"
+      ],
+      "bestFor": "Butchers, supermarkets and meat shops"
+    },
+    {
+      "id": "dm50",
+      "name": "Spiral Dough Mixer",
+      "model": "AX-DM50",
+      "category": "bakery",
+      "capacity": "50 kg flour/batch",
+      "power": "3 kW",
+      "voltage": "220V / 380V",
+      "weight": "280 kg",
+      "dimensions": "1050 × 650 × 1250 mm",
+      "scale": "both",
+      "featured": true,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Spiral-mixer.jpg",
+      "description": "Develops strong, elastic dough for bread, pizza and buns with a gentle spiral action.",
+      "features": [
+        "Two speeds plus reverse bowl",
+        "Safety guard with auto-stop",
+        "Thick stainless steel bowl"
+      ],
+      "bestFor": "Bakeries, pizzerias and bread factories"
+    },
+    {
+      "id": "dr36",
+      "name": "Dough Divider & Rounder",
+      "model": "AX-DR36",
+      "category": "bakery",
+      "capacity": "36 pieces/cycle",
+      "power": "0.75 kW",
+      "voltage": "220V",
+      "weight": "260 kg",
+      "dimensions": "600 × 600 × 1400 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Work_dough.jpg",
+      "description": "Divides and rounds dough into equal pieces in seconds, so every bun weighs the same.",
+      "features": [
+        "30–100 g piece weight",
+        "Interchangeable plates",
+        "Saves hours of hand shaping each day"
+      ],
+      "bestFor": "Bakeries and burger bun producers"
+    },
+    {
+      "id": "ro16",
+      "name": "Rotary Rack Oven",
+      "model": "AX-RO16",
+      "category": "bakery",
+      "capacity": "16 trays/batch",
+      "power": "Gas / diesel / electric",
+      "voltage": "380V",
+      "weight": "1,600 kg",
+      "dimensions": "2100 × 1750 × 2400 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Industrial_hearth_deck_oven_and_rotary_rack_oven.JPG/960px-Industrial_hearth_deck_oven_and_rotary_rack_oven.JPG",
+      "description": "Bakes evenly on all sides as the rack rotates, with built-in steam for crusty bread.",
+      "features": [
+        "Choice of gas, diesel or electric heating",
+        "Steam system for crusty loaves",
+        "Digital temperature and timer control"
+      ],
+      "bestFor": "Growing bakeries and central bakery kitchens"
+    },
+    {
+      "id": "ds520",
+      "name": "Dough Sheeter",
+      "model": "AX-DS520",
+      "category": "bakery",
+      "capacity": "520 mm sheet width",
+      "power": "0.75 kW",
+      "voltage": "220V",
+      "weight": "210 kg",
+      "dimensions": "2600 × 950 × 1200 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Baker_using_dough_sheeter.jpg/960px-Baker_using_dough_sheeter.jpg",
+      "description": "Rolls dough to an even thickness for croissants, puff pastry, pizza bases and flatbreads.",
+      "features": [
+        "Thickness from 0.5 to 40 mm",
+        "Foldable tables save space",
+        "Reversible conveyor belts"
+      ],
+      "bestFor": "Pastry shops, bakeries and hotels"
+    },
+    {
+      "id": "vw1000",
+      "name": "Vegetable Washer & Peeler",
+      "model": "AX-VW1000",
+      "category": "fruitveg",
+      "capacity": "500–1,000 kg/h",
+      "power": "2.2 kW",
+      "voltage": "380V",
+      "weight": "420 kg",
+      "dimensions": "2400 × 900 × 1300 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Kartoffelsch%C3%A4lmaschine.jpg",
+      "description": "Brush-washes and peels potatoes, carrots, ginger and other root vegetables continuously.",
+      "features": [
+        "Soft nylon brush rollers",
+        "Built-in water spray system",
+        "Adjustable peeling time"
+      ],
+      "bestFor": "Chip and fries factories, vegetable processors"
+    },
+    {
+      "id": "vc660",
+      "name": "Vegetable Cutter",
+      "model": "AX-VC660",
+      "category": "fruitveg",
+      "capacity": "300–600 kg/h",
+      "power": "1.1 kW",
+      "voltage": "220V / 380V",
+      "weight": "75 kg",
+      "dimensions": "800 × 500 × 1000 mm",
+      "scale": "small",
+      "featured": true,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cucumber_slices.jpg",
+      "description": "Slices, dices and shreds vegetables and fruit with quick-change blades.",
+      "features": [
+        "Slice, dice, strip and shred",
+        "Thickness adjustable",
+        "Easy to clean, food-grade parts"
+      ],
+      "bestFor": "Restaurants, salad bars and central kitchens"
+    },
+    {
+      "id": "fp1",
+      "name": "Fruit Pulping Machine",
+      "model": "AX-FP1",
+      "category": "fruitveg",
+      "capacity": "1–2 t/h",
+      "power": "5.5 kW",
+      "voltage": "380V",
+      "weight": "350 kg",
+      "dimensions": "1500 × 600 × 1400 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Mango_pulp.jpg/960px-Mango_pulp.jpg",
+      "description": "Separates pulp from seeds and skin for jam, juice concentrate and purée production.",
+      "features": [
+        "Changeable sieve sizes",
+        "Works with mango, tomato, berries and more",
+        "Continuous feeding"
+      ],
+      "bestFor": "Jam, sauce and purée producers"
+    },
+    {
+      "id": "jx500",
+      "name": "Industrial Juice Extractor",
+      "model": "AX-JX500",
+      "category": "fruitveg",
+      "capacity": "500 kg/h",
+      "power": "3 kW",
+      "voltage": "380V",
+      "weight": "180 kg",
+      "dimensions": "1200 × 600 × 1300 mm",
+      "scale": "both",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sugarcane_juicer_machine.jpg/960px-Sugarcane_juicer_machine.jpg",
+      "description": "Presses fresh juice from oranges, apples, pineapples and sugarcane with high yield.",
+      "features": [
+        "Spiral press for high juice yield",
+        "Separate pulp outlet",
+        "Food-grade stainless steel"
+      ],
+      "bestFor": "Juice bars, beverage startups and fruit processors"
+    },
+    {
+      "id": "se70",
+      "name": "Snack Extruder Line",
+      "model": "AX-SE70",
+      "category": "snack",
+      "capacity": "120–150 kg/h",
+      "power": "Full line",
+      "voltage": "380V",
+      "weight": "3,200 kg",
+      "dimensions": "Line length approx. 22 m",
+      "scale": "factory",
+      "featured": true,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Fish_food_extruder.jpg/960px-Fish_food_extruder.jpg",
+      "description": "A complete line for puffed corn snacks, cereal rings and filled pillows, from mixing to flavouring.",
+      "features": [
+        "Change shapes with a mould swap",
+        "Mixer, extruder, dryer and flavouring included",
+        "Low waste, consistent puffing"
+      ],
+      "bestFor": "Snack brands and cereal producers"
+    },
+    {
+      "id": "cf3000",
+      "name": "Continuous Belt Fryer",
+      "model": "AX-CF3000",
+      "category": "snack",
+      "capacity": "300–500 kg/h",
+      "power": "Electric or gas",
+      "voltage": "380V",
+      "weight": "1,100 kg",
+      "dimensions": "3000 × 1200 × 2200 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Frying_Chips.jpg/960px-Frying_Chips.jpg",
+      "description": "Fries chips, nuts and snacks evenly on a continuous belt, with automatic oil filtration.",
+      "features": [
+        "Oil-water separation keeps oil fresh",
+        "Auto lift hood for cleaning",
+        "Precise temperature control"
+      ],
+      "bestFor": "Snack, chip and peanut processors"
+    },
+    {
+      "id": "sd800",
+      "name": "Seasoning Drum",
+      "model": "AX-SD800",
+      "category": "snack",
+      "capacity": "200–500 kg/h",
+      "power": "0.75 kW",
+      "voltage": "220V / 380V",
+      "weight": "150 kg",
+      "dimensions": "1800 × 900 × 1500 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Puffcorn_Example_Frito_Lay.jpg/960px-Puffcorn_Example_Frito_Lay.jpg",
+      "description": "Coats snacks, nuts and chips evenly with powder or liquid seasoning.",
+      "features": [
+        "Octagonal drum for even coating",
+        "Adjustable tilt and speed",
+        "Optional automatic powder feeder"
+      ],
+      "bestFor": "Snack startups and nut roasters"
+    },
+    {
+      "id": "pc100",
+      "name": "Popcorn Machine",
+      "model": "AX-PC100",
+      "category": "snack",
+      "capacity": "50–100 kg/h",
+      "power": "Gas or electric",
+      "voltage": "220V / 380V",
+      "weight": "380 kg",
+      "dimensions": "1600 × 1200 × 1900 mm",
+      "scale": "both",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Popcorn_processing.jpg/960px-Popcorn_processing.jpg",
+      "description": "Makes caramel, chocolate and butter popcorn in large batches with even coating.",
+      "features": [
+        "Stirring arm prevents burning",
+        "Sugar and flavour coating built in",
+        "Fast tilt discharge"
+      ],
+      "bestFor": "Popcorn brands, cinemas and snack makers"
+    },
+    {
+      "id": "nm60",
+      "name": "Fresh Noodle Machine",
+      "model": "AX-NM60",
+      "category": "noodle",
+      "capacity": "60–80 kg/h",
+      "power": "3 kW",
+      "voltage": "220V / 380V",
+      "weight": "260 kg",
+      "dimensions": "1500 × 650 × 1200 mm",
+      "scale": "small",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/10Rolle_Noodle_Making_Machine.jpg/960px-10Rolle_Noodle_Making_Machine.jpg",
+      "description": "Presses and cuts fresh noodles in different widths, from thin ramen to wide flat noodles.",
+      "features": [
+        "Multiple cutter widths included",
+        "Multi-roller pressing for smooth texture",
+        "Simple to operate"
+      ],
+      "bestFor": "Noodle shops, restaurants and small factories"
+    },
+    {
+      "id": "pe100",
+      "name": "Pasta Extruder",
+      "model": "AX-PE100",
+      "category": "noodle",
+      "capacity": "80–100 kg/h",
+      "power": "7.5 kW",
+      "voltage": "380V",
+      "weight": "520 kg",
+      "dimensions": "1700 × 900 × 1700 mm",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/DEMACO_Pasta_Extruder_with_Dual_Mixers.jpg/960px-DEMACO_Pasta_Extruder_with_Dual_Mixers.jpg",
+      "description": "Extrudes macaroni, penne, spaghetti and shapes with bronze dies for a classic texture.",
+      "features": [
+        "Bronze dies for many shapes",
+        "Vacuum mixing chamber",
+        "Cutter speed controls length"
+      ],
+      "bestFor": "Pasta producers and food distributors"
+    },
+    {
+      "id": "nr200",
+      "name": "Nut Roasting Machine",
+      "model": "AX-NR200",
+      "category": "nut",
+      "capacity": "100–200 kg/batch",
+      "power": "Gas or electric",
+      "voltage": "380V",
+      "weight": "600 kg",
+      "dimensions": "2200 × 1100 × 1700 mm",
+      "scale": "both",
+      "featured": true,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/DIEDRICH_infrared_drum_coffee_roaster.jpg",
+      "description": "Roasts peanuts, almonds, seeds and coffee evenly in a rotating drum.",
+      "features": [
+        "Even heat from rotating drum",
+        "Fast discharge and cooling",
+        "Works with peanuts, sesame, seeds and beans"
+      ],
+      "bestFor": "Nut brands, peanut butter makers and seed processors"
+    },
+    {
+      "id": "ns300",
+      "name": "Nut Slicer",
+      "model": "AX-NS300",
+      "category": "nut",
+      "capacity": "200–300 kg/h",
+      "power": "2.2 kW",
+      "voltage": "220V / 380V",
+      "weight": "160 kg",
+      "dimensions": "1000 × 700 × 1300 mm",
+      "scale": "both",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Almond_slices.jpg/960px-Almond_slices.jpg",
+      "description": "Cuts almonds, peanuts and other nuts into even slices or strips.",
+      "features": [
+        "Slice thickness 0.6–2 mm",
+        "Low breakage rate",
+        "Quick blade change"
+      ],
+      "bestFor": "Bakery suppliers and nut processors"
+    },
+    {
+      "id": "pb150",
+      "name": "Peanut Butter Grinder",
+      "model": "AX-PB150",
+      "category": "nut",
+      "capacity": "100–150 kg/h",
+      "power": "7.5 kW",
+      "voltage": "380V",
+      "weight": "280 kg",
+      "dimensions": "900 × 450 × 1100 mm",
+      "scale": "both",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Peanut_butter_making_machine%2C_Bengaluru_%282026%29.jpg/960px-Peanut_butter_making_machine%2C_Bengaluru_%282026%29.jpg",
+      "description": "A colloid mill that grinds peanuts, sesame and almonds into smooth, creamy butter.",
+      "features": [
+        "Adjustable fineness",
+        "Water-cooled grinding chamber",
+        "Also makes tahini and sauces"
+      ],
+      "bestFor": "Nut butter brands and sauce makers"
+    },
+    {
+      "id": "df4800",
+      "name": "Automatic Dumpling Machine",
+      "model": "AX-DF4800",
+      "category": "frozen",
+      "capacity": "4,800 pcs/h",
+      "power": "2.2 kW",
+      "voltage": "220V / 380V",
+      "weight": "200 kg",
+      "dimensions": "1300 × 700 × 1400 mm",
+      "scale": "both",
+      "featured": true,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Dumplings_%28Unsplash%29.jpg/960px-Dumplings_%28Unsplash%29.jpg",
+      "description": "Makes dumplings, gyoza, samosas and empanadas automatically with your own fillings.",
+      "features": [
+        "Moulds for many dumpling shapes",
+        "Adjustable wrapper thickness and filling",
+        "Replaces several hand workers"
+      ],
+      "bestFor": "Frozen food makers, restaurants and caterers"
+    },
+    {
+      "id": "sf500",
+      "name": "IQF Spiral Freezer",
+      "model": "AX-SF500",
+      "category": "frozen",
+      "capacity": "500 kg/h",
+      "power": "Custom",
+      "voltage": "380V",
+      "weight": "Custom",
+      "dimensions": "Custom to your site",
+      "scale": "factory",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Spiral_Freezer.jpg/960px-Spiral_Freezer.jpg",
+      "description": "Quick-freezes dumplings, meat and seafood individually to lock in freshness.",
+      "features": [
+        "Fast freezing keeps texture",
+        "Space-saving spiral design",
+        "Stainless steel mesh belt"
+      ],
+      "bestFor": "Frozen food and seafood factories"
+    },
+    {
+      "id": "sp2000",
+      "name": "Spring Roll Pastry Machine",
+      "model": "AX-SP2000",
+      "category": "frozen",
+      "capacity": "2,000 sheets/h",
+      "power": "Gas or electric",
+      "voltage": "220V / 380V",
+      "weight": "450 kg",
+      "dimensions": "4000 × 900 × 1400 mm",
+      "scale": "both",
+      "featured": false,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Golden_Vegetable_Spring_Rolls_Served_with_Dipping_Sauce.jpg/960px-Golden_Vegetable_Spring_Rolls_Served_with_Dipping_Sauce.jpg",
+      "description": "Produces thin, even sheets for spring rolls, samosas and crepes on a heated drum.",
+      "features": [
+        "Adjustable sheet size and thickness",
+        "Automatic cutting and stacking",
+        "Even heat for consistent sheets"
+      ],
+      "bestFor": "Frozen snack makers and caterers"
+    }
+  ]
+}
